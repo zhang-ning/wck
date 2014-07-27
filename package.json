@@ -1,0 +1,30 @@
+{
+  "name": "wpt",
+  "version": "0.0.0",
+  "description": "web components pre-build tools",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "bin/wpt.js",
+  "keywords": [
+    "web",
+    "components",
+    "pre-build",
+    "tools"
+  ],
+  "author": "Jonathan Zhang",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^1.21.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "html-minifier": "^0.6.5",
+    "node-fs": "^0.1.7"
+  }
+}

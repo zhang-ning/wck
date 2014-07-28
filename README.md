@@ -9,7 +9,11 @@
 ```
 npm install -g wck
 wpt index.html b.html c.html d.html
+```
 
+然后会生产一个build/{index}/目录，里面放有优化后的 components.html
+和 components.css
+```
 build
 ├── font
 │   ├── fox-icon.eot
@@ -23,8 +27,6 @@ build
 └── index.html
 ```
 
-然后会生产一个build/{index}/目录，里面放有优化后的 components.html
-和 components.css
 
 
 ### License MIT

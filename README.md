@@ -1,4 +1,4 @@
-### WCK 是 web compoment tools 的缩写
+### WCK 是 Web Compoment Kitchen 的缩写
 
 旨在根据页面上引入的链接，合并web-compoment 文件，减少网络请求，合并，压缩html
 并将内部的css抽取出来

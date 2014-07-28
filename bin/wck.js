@@ -48,36 +48,31 @@ if (process.argv.length < 3) {
  */
 
 function begin(files) {
+    var cop = 'components/foxui.html';
     for (var i = 0, len = files.length; i < len; i++) {
-        var c = path.basename(files[i], '.html') + '/components.html';
-        var s = path.basename(files[i], '.html') + '/components.css';
-        var j = path.basename(files[i], '.html') + '/components.js';
+        var basename = path.basename(files[i], '.html');
+        var s = basename + '/style.css';
+        var j = basename + '/action.js';
 
-        var component = 'build/' + c;
         var css = 'build/' + s;
         var js = 'build/' + j;
-        var page = 'build/' + path.basename(files[i]);
-
-
-        link = '<link rel="import" href="' + component + '"/>';
-
+        var page = 'build/' + basename + '.html';
 
         var result = shinkWP(files[i],
             false,
-            '<link rel="import" href="' + c + '"/>',
+            '<link rel="import" href="' + cop + '"/>',
             '<link rel="stylesheet" href="' + s + '"/>',
             '<script src="' + j + '"></script>'
         ); //抽取页面中含有 web component;
 
-        writefile(component, result.html, 'html');
-        log.info("generated %s ", component);
         writefile(css, result.css, 'css');
-        log.info("generated %s ", css);
         writefile(js, result.js, 'js');
-        log.info("generated %s ", js);
         writefile(page, result.page, 'html');
-        log.info("generated %s ", page);
     }
+    var allcomponents = Object.keys(comindex).map(function(key){ 
+        return comindex[key];
+    }).join(' ');
+    writefile('build/'+cop,allcomponents,'html')
 }
 
 function shinkCSS(folder, buf) {
@@ -163,10 +158,10 @@ function shinkWP(aim, ischild, link, csslink, jslink) {
 
     for (var i = 0, len = components.length; i < len; i++) {
         var f = path.join(path.dirname(aim), components[i]);
-        if (comindex[f]) {
+        var key = path.basename(components[i],'.html');
+        if (comindex[key]) {
             continue;
         }
-        comindex[f] = 1;
         var html = readfile(f, 'utf8');
         var tmp = shinkCSS(path.dirname(components[i]), html);
         var css = tmp.css;
@@ -182,8 +177,10 @@ function shinkWP(aim, ischild, link, csslink, jslink) {
             dist.html.push(res.html);
             dist.css.push(res.css);
             dist.js.push(res.js);
+            //comindex[key] = res.html;
         } else {
             dist.html.push(html);
+            comindex[key] = html;
         }
         dist.css.push(css);
         dist.js.push(js);

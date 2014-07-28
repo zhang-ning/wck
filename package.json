@@ -1,34 +1,36 @@
 {
-    "name": "wck",
-    "version": "0.0.1",
-    "description": "web components pre-build tools",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:zhang-ning/wck.git"
-    },
-    "directories": {
-        "doc": "doc",
-        "test": "test"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "bin": "bin/wck.js",
-    "keywords": [
-        "web",
-        "components",
-        "pre-build",
-        "tools"
-    ],
-    "author": "Jonathan Zhang",
-    "license": "MIT",
-    "devDependencies": {
-        "mocha": "^1.21.0"
-    },
-    "dependencies": {
-        "chalk": "^0.5.1",
-        "html-minifier": "^0.6.5",
-        "node-fs": "^0.1.7"
-    }
+  "name": "wck",
+  "version": "0.0.2",
+  "description": "web components pre-build tools",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhang-ning/wck.git"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "bin/wck.js",
+  "keywords": [
+    "web",
+    "components",
+    "pre-build",
+    "tools"
+  ],
+  "author": "Jonathan Zhang",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^1.21.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "clean-css": "^2.2.10",
+    "html-minifier": "^0.6.5",
+    "node-fs": "^0.1.7",
+    "uglify-js": "^2.4.15"
+  }
 }

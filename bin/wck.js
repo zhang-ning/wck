@@ -64,9 +64,9 @@ function begin(files) {
 
         var result = shinkWP(files[i],
             false,
-            '<link rel="import" href="' + component + '"/>',
-            '<link rel="stylesheet" href="' + css + '"/>',
-            '<script src="' + js + '"></script>'
+            '<link rel="import" href="' + c + '"/>',
+            '<link rel="stylesheet" href="' + s + '"/>',
+            '<script src="' + j + '"></script>'
         ); //抽取页面中含有 web component;
 
         writefile(component, result.html, 'html');
@@ -137,6 +137,15 @@ function shinkWP(aim, ischild, link, csslink, jslink) {
     var components = [];
     var buf = readfile(aim, 'utf8');
     var newlinkadded = false;
+
+    var pc = shinkCSS(path.dirname(aim),buf);
+    dist.css.push(pc.css);
+    buf = pc.html;
+
+    var pj = shinkJS(path.dirname(aim),buf);
+    dist.js.push(pj.js);
+    buf = pj.html;
+
     dist.page = buf.replace(regHTML, function() {
         //抽取component
         components.push(arguments[1]);
@@ -147,9 +156,10 @@ function shinkWP(aim, ischild, link, csslink, jslink) {
             return '';
         } else {
             newlinkadded = true;
-            return link + '\n' + csslink + '\n' + jslink;
+            return csslink + '\n' + jslink + '\n' + link;
         }
     });
+
 
     for (var i = 0, len = components.length; i < len; i++) {
         var f = path.join(path.dirname(aim), components[i]);

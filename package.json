@@ -1,11 +1,11 @@
 {
-    "name": "wpt",
+    "name": "wck",
     "version": "0.0.1",
     "description": "web components pre-build tools",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "git@github.com:zhang-ning/wpt.git"
+        "url": "git@github.com:zhang-ning/wck.git"
     },
     "directories": {
         "doc": "doc",
@@ -14,7 +14,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "bin": "bin/wpt.js",
+    "bin": "bin/wck.js",
     "keywords": [
         "web",
         "components",

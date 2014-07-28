@@ -9,6 +9,18 @@
 ```
 npm install -g wck
 wpt index.html b.html c.html d.html
+
+build
+├── font
+│   ├── fox-icon.eot
+│   ├── fox-icon.svg
+│   ├── fox-icon.ttf
+│   └── fox-icon.woff
+├── index
+│   ├── components.css
+│   ├── components.html
+│   └── components.js
+└── index.html
 ```
 
 然后会生产一个build/{index}/目录，里面放有优化后的 components.html

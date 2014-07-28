@@ -8,23 +8,61 @@
 
 ```
 npm install -g wck
-wpt index.html b.html c.html d.html
+wck index.html movie.html stars.html usrank.html imagegallery.html
+```
+
+```
+generated build/index/components.html 
+generated build/index/components.css 
+generated build/index/components.js 
+generated build/index.html 
+generated build/movie/components.html 
+generated build/movie/components.css 
+generated build/movie/components.js 
+generated build/movie.html 
+generated build/stars/components.html 
+generated build/stars/components.css 
+generated build/stars/components.js 
+generated build/stars.html 
+generated build/usrank/components.html 
+generated build/usrank/components.css 
+generated build/usrank/components.js 
+generated build/usrank.html 
+generated build/imagegallery/components.html 
+generated build/imagegallery/components.css 
+generated build/imagegallery/components.js 
+generated build/imagegallery.html
 ```
 
 然后会生产一个build/{index}/目录，里面放有优化后的 components.html
 和 components.css
 ```
 build
-├── font
-│   ├── fox-icon.eot
-│   ├── fox-icon.svg
-│   ├── fox-icon.ttf
-│   └── fox-icon.woff
+├── imagegallery
+│   ├── components.css
+│   ├── components.html
+│   └── components.js
+├── imagegallery.html
 ├── index
 │   ├── components.css
 │   ├── components.html
 │   └── components.js
-└── index.html
+├── index.html
+├── movie
+│   ├── components.css
+│   ├── components.html
+│   └── components.js
+├── movie.html
+├── stars
+│   ├── components.css
+│   ├── components.html
+│   └── components.js
+├── stars.html
+├── usrank
+│   ├── components.css
+│   ├── components.html
+│   └── components.js
+└── usrank.html
 ```
 
 

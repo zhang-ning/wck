@@ -1,6 +1,6 @@
 {
   "name": "wck",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "web components pre-build tools",
   "main": "index.js",
   "repository": {
